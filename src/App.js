@@ -1,32 +1,65 @@
 import React from 'react';
 import './App.css';
 
+import logo from './resource/img/logo.png';
+
+import categories from './resource/ic/black/ic_categories.png';
+import catalog from './resource/ic/black/ic_playlist_add_check.png';
+import myList from './resource/ic/black/ic_list.png';
+import liveHelp from './resource/ic/black/ic_chat.png';
+import pim from './resource/ic/black/ic_check_circle.png';
+import account from './resource/ic/black/ic_person.png';
+import branchLocations from './resource/ic/black/ic_place.png';
+
+import icmenu from './resource/ic/white/ic_menu.png';
+import icperson from './resource/ic/white/ic_person.png';
+import icsearch from './resource/ic/white/ic_search.png';
+import icshoppingcart from './resource/ic/white/ic_shopping_cart.png';
+
+import datacomm from './resource/img/datacomm.png';
+import hvac from './resource/img/hvac.png';
+import industrial from './resource/img/industrial.png';
+import lighting from './resource/img/lighting.png';
+import energy from './resource/img/energy.png';
+import utility from './resource/img/utility.png';
+
+import plattPlus from './resource/img/platt-plus.png';
+import todayDeals from './resource/panel/deal.png';
+import recent11 from './resource/recent/11.png';
+import recent22 from './resource/recent/22.png';
+import superTool from './resource/img/super-tool-day.png';
+import locationB from './resource/img/ic_location_b.png';
+import helpCenter from './resource/img/ic_helpcenter.png';
+import plattUniversity from './resource/img/ic_platt-u.png';
+import appStore from './resource/panel/app-get-banner.png';
+
+
 class App extends React.Component {
 
   menuItems = [
-    {src: "", text: "Shop all categories"},
-    {src: "", text: "My Catalog"},
-    {src: "", text: "My List"},
-    {src: "", text: "Live Help"},
-    {src: "", text: "PIM"},
-    {src: "", text: "Account"},
-    {src: "", text: "Branch Locations"},
+    {src: categories, text: "Shop all categories"},
+    {src: catalog, text: "My Catalog"},
+    {src: myList, text: "My List"},
+    {src: liveHelp, text: "Live Help"},
+    {src: pim, text: "PIM"},
+    {src: account, text: "Account"},
+    {src: branchLocations, text: "Branch Locations"},
   ];
 
   productMarkets = [
-    {src: "", text: "DataComm"},
-    {src: "", text: "HVAC"},
-    {src: "", text: "Industrial"},
-    {src: "", text: "Lighting"},
-    {src: "", text: "Energy Efficiency"},
-    {src: "", text: "Utility"}
+    {src: datacomm, text: "DataComm"},
+    {src: hvac, text: "HVAC"},
+    {src: industrial, text: "Industrial"},
+    {src: lighting, text: "Lighting"},
+    {src: energy, text: "Energy Efficiency"},
+    {src: utility, text: "Utility"}
   ];
 
   helpfulLinks = [
-    {src: "", text: "Super Tool Day & Dynamic Data Day"},
-    {src: "", text: "Branch Locations"},
-    {src: "", text: "Help Center"},
-    {src: "", text: "Platt University"},
+    {src: superTool, text: "Super Tool Day & Dynamic Data Day"},
+    {src: locationB, text: "Branch Locations"},
+    {src: helpCenter, text: "Help Center"},
+    {src: plattUniversity, text: "Platt University"},
   ];
 
   populateMenu() {
@@ -36,7 +69,7 @@ class App extends React.Component {
             <li 
                 key={menuItem.text}
             >
-              <img src={menuItem.src} />
+              <img src={menuItem.src} alt={menuItem.text} />
               <span>{menuItem.text}</span>
             </li>
         )
@@ -51,7 +84,7 @@ class App extends React.Component {
             <div 
                 key={market.text}
             >
-              <img src={market.src} />
+              <img src={market.src} alt={market.text} />
               <h4>{market.text}</h4>
             </div>
         )
@@ -67,7 +100,7 @@ class App extends React.Component {
                 className="populated-link"
                 key={link.text}
             >
-              <img src={link.src} />
+              <img src={link.src} alt={link.text} />
               <h4>{link.text}</h4>
             </div>
         )
@@ -80,7 +113,15 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <div className="top-bar">
-
+            <div class="top-left">
+              <img src={logo} alt="Platt Logo" />
+            </div>
+            <div class="top-right">
+              <img src={icsearch} alt="search" />
+              <img src={icshoppingcart} alt="cart" />
+              <img src={icperson} alt="profile" />
+              <img src={icmenu} alt="menu" />
+            </div>
           </div>
           <input type="text" name="search" placeholder="What are you looking for?"></input>
         </header>
@@ -95,7 +136,7 @@ class App extends React.Component {
             {this.populateMarkets()}
           </section>
           <section className="get-started">
-            <img src=""/>
+            <img src={plattPlus} alt="Get Started" />
             <div>
               <h2>Get Started Today</h2>
               <h3>Become a <span className="green-text">Platt Plus</span> Member.</h3>
@@ -103,16 +144,18 @@ class App extends React.Component {
             </div>
           </section>
           <section className="helpful-links">
-            <img src="" className="deals" />
+            <img src={todayDeals} className="deals" alt="deals" />
             <div className="recent">
               <div><h4>Recently Viewed</h4></div>
               <div><h4 className="green-text">View All</h4></div>
-              <img src="" />
+              <img src={recent11} alt="Recent Products" />
+              <img src={recent22} alt="Recent Products" />
+              <img src={recent22} alt="Recent Products" />
             </div>
             {this.populateLinks()}
           </section>
           <section className="app-links">
-            <img src="" />
+            <img src={appStore} alt="App Links" />
             <div><h4>Shop better, download the Platt App today</h4></div>
           </section>
         </main>
@@ -128,7 +171,7 @@ class App extends React.Component {
               <h3>7 Days a week</h3>
             </div>
             <button>
-              <img src="" />
+              <img src="" alt="Live Help" />
               Live Help
             </button>
           </div>
