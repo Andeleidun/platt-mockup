@@ -2,22 +2,298 @@
   text-align: center;
 }
 
+/* App Header */
+
 .App-header {
   background-color: #008833;
-  height: 10vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 10px 0;
 }
+
+.App-header img {
+  cursor: pointer;
+}
+
+.App-header .top-bar {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.App-header .top-bar .top-left {
+  text-align: left;
+}
+
+.App-header .top-bar .top-right {
+  text-align: right;
+}
+
+.App-header .top-bar .top-right img {
+  padding: 0 10px;
+}
+
+.App-header input {
+  width: 95%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+}
+
+/* Nav Bar */
+
+.App-menu ul {
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-areas: 
+    'head head head'
+    'middle middle middle'
+    'bottom bottom bottom';
+}
+
+.App-menu ul li {
+  border: 1px solid gray;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.App-menu ul li:first-child {
+  grid-area: head;
+  border: 0;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.App-menu ul li img {
+  padding: 0 10px;
+}
+
+/* Main App Area */
 
 .App-main {
   background-color: #eeeeee;
+  display: inline-block;
+  width: 100%;
 }
+
+.App-main section {
+  width: 95%;
+  margin: 20px auto;
+}
+
+.App-main .product-markets {
+  display: grid;
+  grid-template-areas:
+    'title title title title title title'
+    'main main main main main main';
+  grid-template-columns: calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7) calc(100%/7);
+  justify-content: space-between;
+}
+
+.App-main .product-markets h2 {
+  grid-area: title;
+}
+
+.App-main .product-markets div {
+  width: 100%;
+  box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -webkit-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+}
+
+.App-main .product-markets div div {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 75px;
+}
+
+.App-main .product-markets div div:first-child {
+  padding: 0;
+  height: initial;
+}
+
+.App-main .product-markets div img {
+  width: 100%;
+  display: block;
+}
+
+.App-main .product-markets div h4 {
+  margin: 0;
+}
+
+.App-main .get-started {
+  background-color: white;
+  padding: 40px 0;
+  box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -webkit-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+}
+
+.App-main .get-started div {
+  display: grid;
+  align-content: center;
+}
+
+.App-main .get-started img {
+  width: 70%;
+}
+
+.App-main .get-started h2 {
+  margin-bottom: 0;
+}
+
+.App-main .get-started h3 {
+  margin-top: 0;
+}
+
+.App-main .get-started button {
+  border: 0;
+  padding: 15px;
+  width: 100%;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.App-main .helpful-links {
+  display: grid;
+  grid-template-areas:
+    'deals deals recent recent'
+    'main main main main';
+  grid-gap: 25px;
+  grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+  justify-content: space-between;
+}
+
+.App-main .helpful-links .deals {
+  grid-area: deals;
+  height: 100%;
+  width: 100%;
+  box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -webkit-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  cursor: pointer;
+}
+
+.App-main .helpful-links .recent {
+  grid-area: recent;
+  background-color: white;
+  box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -webkit-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  padding: 5px 15px;
+}
+
+.App-main .helpful-links .recent div {
+  width: 50%;
+  display: inline-block;
+  text-align: right;
+  cursor: pointer;
+}
+
+.App-main .helpful-links .recent div:first-child {
+  text-align: left;
+}
+
+.App-main .helpful-links .recent img {
+  width: 28%;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.App-main .helpful-links .populated-link {
+  background-color: white;
+  box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -webkit-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  justify-items: center;
+  display: grid;
+  align-items: center;
+  cursor: pointer;
+}
+
+.App-main .helpful-links .populated-link img {
+  padding: 10px 0;
+}
+
+.App-main .app-links {
+  box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -webkit-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+}
+
+.App-main .app-links img {
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
+.App-main .app-links div {
+  background-color: white;
+}
+
+.App-main .app-links div h4 {
+  margin: 0;
+  padding: 20px;
+}
+
+/* Footer */
 
 .App-footer {
   background-color: #666666;
   color: white;
+  display: inline-block;
+  width: 100%;
+}
+
+.App-footer .footer-column div {
+  margin: 25px 0;
+}
+
+.App-footer .footer-column div h3, .App-footer .footer-column div h4 {
+  margin: 0;
+}
+
+.App-footer .footer-column button {
+  width: 33%;
+  border-radius: 25px;
+  border: 0;
+  padding: 15px;
+  font-size: 20px;
+  background-color: white;
+}
+
+.App-footer .footer-column button img {
+  padding: 0 20px;
+}
+
+.App-footer .footer-bottom {
+  display: grid;
+  padding: 10px 0;
+  grid-template-columns: 33% 33% 33%;
+}
+
+/* General */
+
+.green-text {
+  color: #008833;
+}
+
+.gray-text {
+  color: #eeeeee;
 }

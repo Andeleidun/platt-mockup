@@ -32,6 +32,7 @@ import locationB from './resource/img/ic_location_b.png';
 import helpCenter from './resource/img/ic_helpcenter.png';
 import plattUniversity from './resource/img/ic_platt-u.png';
 import appStore from './resource/panel/app-get-banner.png';
+import comment from './resource/ic/black/ic_comment.png';
 
 
 class App extends React.Component {
@@ -84,8 +85,8 @@ class App extends React.Component {
             <div 
                 key={market.text}
             >
-              <img src={market.src} alt={market.text} />
-              <h4>{market.text}</h4>
+              <div><img src={market.src} alt={market.text} /></div>
+              <div><h4>{market.text}</h4></div>
             </div>
         )
     }
@@ -125,7 +126,7 @@ class App extends React.Component {
           </div>
           <input type="text" name="search" placeholder="What are you looking for?"></input>
         </header>
-        <nav className="menu">
+        <nav className="App-menu">
           <ul>
             {this.populateMenu()}
           </ul>
@@ -171,7 +172,7 @@ class App extends React.Component {
               <h3>7 Days a week</h3>
             </div>
             <button>
-              <img src="" alt="Live Help" />
+              <img src={comment} alt="Live Help" />
               Live Help
             </button>
           </div>
