@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project can be viewed live on [Github Pages](https://andeleidun.github.io/platt-mockup/).
+
+Project has a tablet and mobile view for mockup found in 'src/resource/PDF Export.pdf', completed for Rexel. 
+
+Project uses an API call to [Star Wars API](http://swapi.co) for an autocomplete function. 
+
 ## Available Scripts
 
 In the project directory, you can run:
