@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .App {
   text-align: center;
+  background-color: #3d3d3d;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #3d3d3d;
+  box-shadow: 2px 2px 5px 3px rgba(51,51,51,0.5);
+  -webkit-box-shadow: 2px 2px 5px 3px rgba(51,51,51,0.5);
+  -moz-box-shadow: 2px 2px 5px 3px rgba(51,51,51,0.5);
 }
 
 /* App Header */
@@ -10,7 +24,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
   padding: 10px 0;
 }
@@ -38,12 +51,48 @@
   padding: 0 10px;
 }
 
-.App-header input {
+.App-header .autocomplete {
   width: 95%;
   margin: 10px auto;
-  padding: 10px;
+}
+
+.App-header .autocomplete .suggestions {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 1160px;
+  list-style-type: none;
+  color: black;
+  text-align: left;
+}
+
+.App-header .autocomplete .suggestions li {
+  background-color: white;
+  padding: 5px 25px;
+  border: 1px #eeeeee solid;
+  font-size: 20px;
+}
+
+.App-header .autocomplete .suggestions li:hover {
+  background-color: #eeeeee;
+}
+
+.App-header .autocomplete input {
+  width: calc(100% - 20px);
+  padding: 20px 10px;
   border-radius: 5px;
   border: 0;
+  font-size: 20px;
+}
+
+.App-header .search-button {
+  position: relative;
+  left: 45%;
+  top: 50px;
+}
+
+.App-header .loading-search {
+  opacity: 0.5;
 }
 
 /* Nav Bar */
@@ -61,9 +110,9 @@
 }
 
 .App-menu ul li {
-  border: 1px solid gray;
+  border: 1px solid #d8d8d8;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -72,6 +121,13 @@
   border: 0;
   padding: 15px;
   font-weight: bold;
+}
+
+.App-menu ul li figure {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 75px;
 }
 
 .App-menu ul li img {
@@ -167,7 +223,7 @@
   padding: 15px;
   width: 100%;
   border-radius: 25px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .App-main .helpful-links {
@@ -296,4 +352,77 @@
 
 .gray-text {
   color: #eeeeee;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+/* Mobile */
+
+.App-main .mobile-area {
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .App-header .autocomplete {
+    width: 85%;
+  }
+
+  .App-header .search-button {
+    left: 35%;
+  }
+
+  .App-menu ul {
+    grid-template-areas: 
+      'head'
+      'other';
+    text-align: left;
+  }
+
+  .App-main .product-markets {
+    display: none;
+  }
+
+  .App-main .mobile-area {
+    display: grid;
+    grid-template-columns: 28% 28% 28%;
+    justify-content: space-around;
+  }
+
+  .App-main .mobile-area div {
+    cursor: pointer;
+  }
+
+  .App-main .mobile-area button {
+    background-color: white;
+    border: 0;
+    box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+    -webkit-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+    -moz-box-shadow: 1px 1px 4px 2px rgba(51,51,51,0.2);
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  .App-main .get-started {
+    grid-template-columns: 100%;
+  }
+
+  .App-main .helpful-links {
+    grid-template-areas:
+      'deals deals'
+      'recent recent'
+      'main main';
+    grid-template-columns: 48% 48%;
+  }
+
+  .App-footer .footer-column button {
+    width: 60%;
+  }
 }
